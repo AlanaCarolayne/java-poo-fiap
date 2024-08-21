@@ -14,8 +14,8 @@ public class ConectionFactoryPool {
 
 		HikariConfig config = new HikariConfig();
 		config.setJdbcUrl("jdbc:oracle:thin:@oracle.fiap.con.br:1521:ORCL");
-		config.setUsername("rm552261");
-		config.setPassword("060204");
+		config.setUsername("");
+		config.setPassword("");
 		config.setMaximumPoolSize(10);
 		config.setMinimumIdle(5);
 		config.setIdleTimeout(60000);
