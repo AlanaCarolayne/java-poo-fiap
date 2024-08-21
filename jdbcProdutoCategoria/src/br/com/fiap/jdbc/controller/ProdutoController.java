@@ -4,14 +4,14 @@ import java.sql.Connection;
 import java.util.List;
 
 import br.com.fiap.dao.ProdutoDAO;
-import br.com.fiap.factory.ConnectionFactory;
+import br.com.fiap.factory.ConectionFactoryPool;
 import br.com.fiap.model.Produto;
 
 public class ProdutoController {
 	private ProdutoDAO produtoDAO;
 
 	public ProdutoController() {
-		Connection connection = new ConnectionFactory().getConnection();
+		Connection connection = new ConectionFactoryPool().getConnection();
 		this.produtoDAO = new ProdutoDAO(connection);
 	}
 	

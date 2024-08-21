@@ -5,14 +5,14 @@ import java.sql.SQLException;
 import java.util.List;
 
 import br.com.fiap.dao.CategoriaDAO;
-import br.com.fiap.factory.ConnectionFactory;
+import br.com.fiap.factory.ConectionFactoryPool;
 import br.com.fiap.model.Categoria;
 
 public class CategoriaController {
 	private CategoriaDAO categoriaDAO;
 
 	public CategoriaController() {
-		Connection connection = new ConnectionFactory().getConnection();
+		Connection connection = new ConectionFactoryPool().getConnection();
 		this.categoriaDAO = new CategoriaDAO(connection);
 	}
 	public List<Categoria> listarTodas() throws SQLException{
